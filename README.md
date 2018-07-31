@@ -1,3 +1,7 @@
+# install
+
+    npm i -g google-play-scraper-cli
+
 # usage
 
     Usage: google-play-scraper-cli [options]
