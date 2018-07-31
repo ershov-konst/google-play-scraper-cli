@@ -1,15 +1,16 @@
 let packageJSON = require('./package.json');
 let program = require('commander');
-let scrapper = require('google-play-scrapper');
+let scraper = require('google-play-scraper');
 
 program
    .version(packageJSON.version)
-   .option('-a, --app', 'Link to Google Play')
+   .usage('google-play-scraper -a <appId>')
+   .option('-A, --app <appId>', 'Application id in Google Play')
    .parse(process.argv);
 
 if (!program.app) {
-   console.error('Invalid arguments. Use `google-play-scrapper-cli --help` for help.');
+   program.help();
 } else {
-   scrapper.app({appId: program.app})
+   scraper.app({appId: program.app})
       .then(console.log, console.error);
 }
