@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 let packageJSON = require('./package.json');
 let program = require('commander');
 let scraper = require('google-play-scraper');
